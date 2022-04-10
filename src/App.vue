@@ -1,20 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Ardi JANCOK!"/>
-    <CardComponent tittle="We have a tittle"/>
+    <index-page v-if="currentPathname === '/'"/>
+    <about-page v-if="currentPathname === '/about'"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import CardComponent from './components/Card.vue'
+import IndexPage from './components/IndexPage.vue'
+import AboutPage from './components/AboutPage.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    CardComponent
+    IndexPage,
+    AboutPage
+  },
+  data(){
+    return {
+      currentPathname: "/"
+    }
+  },
+  mounted(){
+    this.currentPathname = window.location.pathname
   }
 }
 </script>

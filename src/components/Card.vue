@@ -1,16 +1,21 @@
 <template>
-    <p>{{ tittle }}</p>
+  <div class="card" >
+    <p :style="`color: ${color}`">{{ tittle }}</p>
+  </div>
 </template>
 
 <style scoped>
-    p {
-        color: red;
-    }
+p {
+  color: red;
+}
 </style>
 
 <script>
 export default {
-    props: ["tittle"],
-    name: 'CardComponent'
-}
+  props: ["tittle", "color"],
+  name: "CardComponent",
+  mounted(){
+      this.$store.dispatch("waitAndIncrement")
+  }
+};
 </script>
