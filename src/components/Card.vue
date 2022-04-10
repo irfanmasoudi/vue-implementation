@@ -1,5 +1,5 @@
 <template>
-    <p>{{tittle}}</p>
+    <p>{{ tittle }}</p>
 </template>
 
 <style scoped>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    props: ['tittle']
-    
+    props: ["tittle"],
+    name: 'CardComponent'
 }
 </script>
